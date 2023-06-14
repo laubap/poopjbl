@@ -23,4 +23,5 @@ class ContatoTelefone extends Contato {
         System.out.println("Endereço: " + this.getEndereco());
         System.out.println("Data nascimento: " + this.getDataNascimento());
     }
+    //adição do telefone
 }

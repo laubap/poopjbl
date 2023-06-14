@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+
+//interface
+
 public class GerenciadorContatosGUI extends JFrame implements ActionListener {
     private GerenciadorContatos gerenciador;
     private JTextField termoPesquisaTextField;
@@ -12,8 +15,9 @@ public class GerenciadorContatosGUI extends JFrame implements ActionListener {
 
     public GerenciadorContatosGUI() {
         gerenciador = new GerenciadorContatos();
+        //a janela do gerenciador - Fazendeiro
 
-        setTitle("Sistema de Gerenciamento de Funcionários");
+        setTitle("Gerenciamento de Funcionários da Fazenda");
         setSize(400, 500);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
@@ -21,7 +25,7 @@ public class GerenciadorContatosGUI extends JFrame implements ActionListener {
         JPanel pesquisaPanel = new JPanel();
         pesquisaPanel.setLayout(new FlowLayout());
 
-        JLabel termoPesquisaLabel = new JLabel("Termo de Pesquisa:");
+        JLabel termoPesquisaLabel = new JLabel("Pesquisar Funcionários:");
         termoPesquisaTextField = new JTextField(20);
         JButton pesquisarButton = new JButton("Pesquisar");
         pesquisarButton.addActionListener(this);
@@ -64,7 +68,7 @@ public class GerenciadorContatosGUI extends JFrame implements ActionListener {
             List<Contato> contatosEncontrados = gerenciador.pesquisarContatos(termoPesquisa);
 
             if (contatosEncontrados.isEmpty()) {
-                resultadoTextArea.setText("Nenhum funcionário encontrado.");
+                resultadoTextArea.setText("Nenhum funcionário encontrado");
             } else {
                 StringBuilder sb = new StringBuilder();
                 sb.append("Funcionários encontrados:\n");
@@ -129,6 +133,7 @@ class AdicionarContatoDialog extends JDialog {
         enderecoTextField = new JTextField();
         JLabel dataNascimentoLabel = new JLabel("Data de nascimento:");
         dataNascimentoTextField = new JTextField();
+        //labels e inputs do usuário
 
         JButton confirmarButton = new JButton("Confirmar");
         confirmarButton.addActionListener(new ActionListener() {
@@ -145,7 +150,8 @@ class AdicionarContatoDialog extends JDialog {
 
                 ContatoTelefone contatoTelefone = new ContatoTelefone(nome, sobrenome, numeroTelefone, email, cargo, salario, endereco, dataNascimento);
                 gerenciador.adicionarContato(contatoTelefone);
-                resultadoTextArea.setText("Funcionário adicionado com sucesso!");
+                resultadoTextArea.setText("Usuário adicionado com sucesso!");
+                //pegando pelo método get todos os dados que foram digitados no input e adicionando o usuário
 
                 dispose();
             }
@@ -170,5 +176,6 @@ class AdicionarContatoDialog extends JDialog {
         adicionarContatoPanel.add(confirmarButton);
 
         add(adicionarContatoPanel);
+        //interface (labels e campos de texto) sendo adicionada ao painel de exposição do contato
     }
 }

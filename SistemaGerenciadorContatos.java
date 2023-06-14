@@ -48,18 +48,6 @@ public class SistemaGerenciadorContatos {
 
                         Contato contato = null;
 
-                        if (cargo.equals(Funcionario.CARGO)) {
-                            contato = new Funcionario(nome, sobrenome, numeroTelefone, email, salario, endereco, dataNascimento);
-                        } else if (cargo.equals(Auxiliar.CARGO)) {
-                            contato = new Auxiliar(nome, sobrenome, numeroTelefone, email, salario, endereco, dataNascimento);
-                        } else if (cargo.equals(Veterinario.CARGO)) {
-                            contato = new Veterinario(nome, sobrenome, numeroTelefone, email, salario, endereco, dataNascimento);
-                        } else {
-                            System.out.println("Cargo inválido.");
-                            System.out.println();
-                            break;
-                        }
-
                         gerenciador.adicionarContato(contato);
                         System.out.println("Funcionário adicionado com sucesso!");
                         System.out.println();

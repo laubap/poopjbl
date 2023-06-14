@@ -8,6 +8,7 @@ import java.util.List;
 
 class GerenciadorContatos implements Serializable {
     private List<Contato> contatos = new ArrayList();
+    //lista de todos os contatos criados
 
     public GerenciadorContatos() {
     }
@@ -66,6 +67,7 @@ class GerenciadorContatos implements Serializable {
             if (nomeCompleto.toLowerCase().contains(termoPesquisa.toLowerCase())) {
                 contatosEncontrados.add(contato);
             }
+            //ajustes para a pesquisa dar certo
         }
 
         return contatosEncontrados;

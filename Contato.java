@@ -8,6 +8,7 @@ abstract class Contato implements Exibivel, Serializable {
     private String salario;
     private String endereco;
     private String dataNascimento;
+    //criação do contato em si
 
     public Contato(String nome, String sobrenome, String email, String cargo, String salario, String endereco, String dataNascimento) {
         this.nome = nome;
