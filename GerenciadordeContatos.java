@@ -7,13 +7,13 @@ import java.util.Iterator;
 import java.util.List;
 
 class GerenciadorContatos implements Serializable {
-    private List<Contato> contatos = new ArrayList();
+    private List<ContatoAdicionais> contatos = new ArrayList();
     //lista de todos os contatos criados
 
     public GerenciadorContatos() {
     }
 
-    public void adicionarContato(Contato contato) {
+    public void adicionarContato(ContatoAdicionais contato) {
         this.contatos.add(contato);
     }
 
@@ -24,7 +24,7 @@ class GerenciadorContatos implements Serializable {
             Iterator var1 = this.contatos.iterator();
 
             while(var1.hasNext()) {
-                Contato contato = (Contato)var1.next();
+                ContatoAdicionais contato = (ContatoAdicionais)var1.next();
                 contato.exibirDetalhes();
                 System.out.println();
             }
@@ -56,12 +56,12 @@ class GerenciadorContatos implements Serializable {
 
     }
 
-    public List<Contato> pesquisarContatos(String termoPesquisa) {
-        List<Contato> contatosEncontrados = new ArrayList();
+    public List<ContatoAdicionais> pesquisarContatos(String termoPesquisa) {
+        List<ContatoAdicionais> contatosEncontrados = new ArrayList();
         Iterator var3 = this.contatos.iterator();
 
         while(var3.hasNext()) {
-            Contato contato = (Contato)var3.next();
+            ContatoAdicionais contato = (ContatoAdicionais)var3.next();
             String var10000 = contato.getNome();
             String nomeCompleto = var10000 + " " + contato.getSobrenome();
             if (nomeCompleto.toLowerCase().contains(termoPesquisa.toLowerCase())) {

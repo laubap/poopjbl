@@ -65,7 +65,7 @@ public class GerenciadorContatosGUI extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Pesquisar")) {
             String termoPesquisa = termoPesquisaTextField.getText();
-            List<Contato> contatosEncontrados = gerenciador.pesquisarContatos(termoPesquisa);
+            List<ContatoAdicionais> contatosEncontrados = gerenciador.pesquisarContatos(termoPesquisa);
 
             if (contatosEncontrados.isEmpty()) {
                 resultadoTextArea.setText("Nenhum funcionário encontrado");
@@ -73,7 +73,7 @@ public class GerenciadorContatosGUI extends JFrame implements ActionListener {
                 StringBuilder sb = new StringBuilder();
                 sb.append("Funcionários encontrados:\n");
 
-                for (Contato contato : contatosEncontrados) {
+                for (ContatoAdicionais contato : contatosEncontrados) {
                     sb.append("Nome: ").append(contato.getNome()).append("\n");
                     sb.append("Sobrenome: ").append(contato.getSobrenome()).append("\n");
                     sb.append("Número de Telefone: ").append(contato.getNumeroTelefone()).append("\n");
@@ -148,10 +148,10 @@ class AdicionarContatoDialog extends JDialog {
                 String endereco = enderecoTextField.getText();
                 String dataNascimento = dataNascimentoTextField.getText();
 
-                ContatoTelefone contatoTelefone = new ContatoTelefone(nome, sobrenome, numeroTelefone, email, cargo, salario, endereco, dataNascimento);
-                gerenciador.adicionarContato(contatoTelefone);
-                resultadoTextArea.setText("Usuário adicionado com sucesso!");
-                //pegando pelo método get todos os dados que foram digitados no input e adicionando o usuário
+                ContatoAdicionais contatoAdicionais = new ContatoAdicionais(nome, sobrenome, numeroTelefone, email, cargo, salario, endereco, dataNascimento);
+                gerenciador.adicionarContato(contatoAdicionais);
+                resultadoTextArea.setText("Funcionário: " + email + ", com a função: "+ cargo + " adicionado com sucesso!");
+                //resposta de cadastro para o usuario
 
                 dispose();
             }
@@ -179,3 +179,4 @@ class AdicionarContatoDialog extends JDialog {
         //interface (labels e campos de texto) sendo adicionada ao painel de exposição do contato
     }
 }
+

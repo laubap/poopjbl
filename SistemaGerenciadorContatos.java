@@ -46,7 +46,7 @@ public class SistemaGerenciadorContatos {
                         System.out.print("Data de nascimento: ");
                         String dataNascimento = scanner.nextLine();
 
-                        Contato contato = null;
+                        ContatoAdicionais contato = null;
 
                         gerenciador.adicionarContato(contato);
                         System.out.println("Funcionário adicionado com sucesso!");
@@ -56,17 +56,17 @@ public class SistemaGerenciadorContatos {
                         System.out.println("Pesquisar funcionário");
                         System.out.print("Termo de Pesquisa: ");
                         String termoPesquisa = scanner.nextLine();
-                        List<Contato> contatosEncontrados = gerenciador.pesquisarContatos(termoPesquisa);
+                        List<ContatoAdicionais> contatosEncontrados = gerenciador.pesquisarContatos(termoPesquisa);
                         if (contatosEncontrados.isEmpty()) {
                             System.out.println("Nenhum funcionário encontrado.");
                             System.out.println();
                             break;
                         } else {
                             System.out.println("Funcionarios encontrados:");
-                            Iterator<Contato> iterator = contatosEncontrados.iterator();
+                            Iterator<ContatoAdicionais> iterator = contatosEncontrados.iterator();
 
                             while (iterator.hasNext()) {
-                                Contato contatoEncontrado = iterator.next();
+                                ContatoAdicionais contatoEncontrado = iterator.next();
                                 contatoEncontrado.exibirDetalhes();
                                 System.out.println();
                             }
