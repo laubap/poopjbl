@@ -64,7 +64,10 @@ class GerenciadorContatos implements Serializable {
             ContatoAdicionais contato = (ContatoAdicionais)var3.next();
             String var10000 = contato.getNome();
             String nomeCompleto = var10000 + " " + contato.getSobrenome();
+            String pesquisacargo = contato.getCargo();
             if (nomeCompleto.toLowerCase().contains(termoPesquisa.toLowerCase())) {
+                contatosEncontrados.add(contato);
+            } else if (pesquisacargo.toLowerCase().contains(termoPesquisa.toLowerCase())) {
                 contatosEncontrados.add(contato);
             }
             //ajustes para a pesquisa dar certo

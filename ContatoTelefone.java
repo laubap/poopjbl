@@ -1,15 +1,21 @@
 import java.io.PrintStream;
 
-class ContatoTelefone extends Pessoa {
+class ContatosPessoa extends Pessoa {
     public String numeroTelefone;
+    public String email;
 
-    public ContatoTelefone(String nome, String sobrenome, String numeroTelefone, String email) {
-        super(nome, sobrenome, email);
+    public ContatosPessoa(String nome, String sobrenome, String numeroTelefone, String email) {
+        super(nome, sobrenome);
         this.numeroTelefone = numeroTelefone;
+        this.email = email;
     }
 
     public String getNumeroTelefone() {
         return this.numeroTelefone;
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 
     public void exibirDetalhes() {
@@ -23,7 +29,7 @@ class ContatoTelefone extends Pessoa {
 
 }
 
-class ContatoTrabalho extends ContatoTelefone {
+class ContatoTrabalho extends ContatosPessoa {
     public String cargo;
     public String salario;
 
