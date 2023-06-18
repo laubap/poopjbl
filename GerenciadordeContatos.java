@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+
 class GerenciadorContatos implements Serializable {
     private List<ContatoAdicionais> contatos = new ArrayList();
     //lista de todos os contatos criados
@@ -15,7 +16,9 @@ class GerenciadorContatos implements Serializable {
 
     public void adicionarContato(ContatoAdicionais contato) {
         this.contatos.add(contato);
+        
     }
+
 
     public void exibirContatos() {
         if (this.contatos.isEmpty()) {
@@ -76,3 +79,4 @@ class GerenciadorContatos implements Serializable {
         return contatosEncontrados;
     }
 }
+
