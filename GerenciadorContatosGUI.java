@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 
-//interface
+//!! aqui que roda a interface
 
 public class GerenciadorContatosGUI extends JFrame implements ActionListener {
     private GerenciadorContatos gerenciador;

@@ -2,9 +2,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
+//código para rodar no terminal
 public class SistemaGerenciadorContatos {
     public static void main(String[] args) {
         GerenciadorContatos gerenciador = new GerenciadorContatos();
+        //nova tela
         Scanner scanner = new Scanner(System.in);
 
         try {
@@ -83,5 +85,6 @@ public class SistemaGerenciadorContatos {
         } finally {
             scanner.close();
         }
+        //usa a Exception para caso aconteça algum erro dentro do while
     }
 }
